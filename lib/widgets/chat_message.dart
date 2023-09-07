@@ -29,7 +29,8 @@ class ChatMessage extends StatelessWidget {
             sentByMe ? MainAxisAlignment.end : MainAxisAlignment.start,
         children: [
           // Message container with styling based on who sent the message.
-          Container(
+          Flexible(
+              child: Container(
             padding:
                 const EdgeInsets.symmetric(horizontal: 16.0, vertical: 10.0),
             decoration: BoxDecoration(
@@ -37,7 +38,7 @@ class ChatMessage extends StatelessWidget {
               borderRadius: BorderRadius.circular(16.0),
             ),
             child: Text(text),
-          )
+          ))
         ],
       ),
     );

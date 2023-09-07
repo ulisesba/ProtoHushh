@@ -13,13 +13,13 @@ Future<String> postMessageToBackend(String message) async {
   try {
     // HTTP POST request to the backend with the message.
     final response = await http.post(
-      Uri.parse('http://mibackend-test.com/prueba'),
+      Uri.parse('http://10.0.2.2:8080/protohush/search'),
       headers: {'Content-Type': 'application/json'},
       body: json.encode({'message': message}),
     );
     // Return the response message from the backend if successful.
     if (response.statusCode == 200) {
-      return json.decode(response.body)['message'];
+      return json.decode(response.body)['data'];
     } else {
       return 'Error: Try again.';
     }
